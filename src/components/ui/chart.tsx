@@ -1,8 +1,9 @@
 "use client"
 
-import { ResponsiveContainer, Tooltip } from "recharts"
-import { ReactNode } from "react"
+import { ResponsiveContainer, Tooltip, TooltipProps } from "recharts"
+import { ReactElement } from "react"
 import { cn } from "@/lib/utils"
+import { ValueType, NameType } from "recharts/types/component/DefaultTooltipContent"
 
 export type ChartConfig = {
   [key: string]: {
@@ -14,9 +15,8 @@ export type ChartConfig = {
 export function ChartContainer({
   children,
   className,
-  config,
 }: {
-  children: ReactNode
+  children: ReactElement // ✅ FIXED here
   className?: string
   config: ChartConfig
 }) {
@@ -33,7 +33,7 @@ export function ChartTooltip({
   content,
   cursor = true,
 }: {
-  content: ReactNode
+  content: TooltipProps<ValueType, NameType>["content"]
   cursor?: boolean
 }) {
   return <Tooltip content={content} cursor={cursor} />
@@ -43,9 +43,7 @@ export function ChartTooltipContent({
   active,
   payload,
   hideLabel,
-}: {
-  active?: boolean
-  payload?: any[]
+}: TooltipProps<ValueType, NameType> & {
   hideLabel?: boolean
 }) {
   if (!active || !payload || !payload.length) return null
@@ -62,7 +60,7 @@ export function ChartTooltipContent({
         <div key={index} className="flex items-center gap-2">
           <span
             className="w-2 h-2 rounded-full"
-            style={{ backgroundColor: entry.color }}
+            style={{ backgroundColor: entry.color ?? "#000" }}
           />
           <span className="text-muted-foreground">{entry.name}:</span>
           <span className="ml-auto font-semibold">{entry.value}</span>

@@ -5,15 +5,12 @@
     "lib": ["ES2023"],
     "module": "ESNext",
     "skipLibCheck": true,
-
-    /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
     "isolatedModules": true,
     "moduleDetection": "force",
-    "noEmit": true,
-
-    /* Linting */
+    "composite": true,                   // ✅ REQUIRED
+    "noEmit": false,                     // ✅ Required for `tsc -b`
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,

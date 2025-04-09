@@ -63,21 +63,19 @@ export default function CommitStats({ events }: Props) {
             height={60}
             interval={0}
             axisLine={false}
-            tick={{ fill: "#ffffff", fontSize: 12 }} // white text
+            tick={{ fill: "#ffffff", fontSize: 12 }}
           />
           <ChartTooltip
             cursor={false}
             content={
-              <ChartTooltipContent
-                className="bg-white text-black"
-                hideLabel
-              />
+              // ✅ Tooltip content must be a function or a valid ReactElement
+              <ChartTooltipContent hideLabel />
             }
           />
           <Bar
             dataKey="commits"
             fill={chartConfig.commits.color}
-            radius={8}
+            radius={[8, 8, 0, 0]} // Smooth top corners
           />
         </BarChart>
       </ChartContainer>
