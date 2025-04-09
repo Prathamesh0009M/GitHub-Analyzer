@@ -7,7 +7,7 @@
     "skipLibCheck": true,
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
-    "noEmit": true,  // ✅ Fix: Required
+    // "noEmit": true,                     // ✅ REQUIRED for allowImportingTsExtensions
     "isolatedModules": true,
     "moduleDetection": "force",
     "composite": true,
