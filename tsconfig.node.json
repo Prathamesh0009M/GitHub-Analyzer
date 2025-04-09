@@ -1,16 +1,16 @@
 {
   "compilerOptions": {
-   "tsBuildInfoFile": "./.tsbuild/tsconfig.app.tsbuildinfo",
+    "tsBuildInfoFile": "./.tsbuild/tsconfig.app.tsbuildinfo",
     "target": "ES2022",
     "lib": ["ES2023"],
     "module": "ESNext",
     "skipLibCheck": true,
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
+    "noEmit": true,                     // ✅ REQUIRED for allowImportingTsExtensions
     "isolatedModules": true,
     "moduleDetection": "force",
-    "composite": true,                   
-    // "noEmit": true,                    
+    "composite": true,
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
