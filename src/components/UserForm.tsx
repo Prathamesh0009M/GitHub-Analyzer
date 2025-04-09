@@ -10,16 +10,23 @@ type Props = {
 
 export default function UserForm({ onSubmit }: Props) {
 
-    const [username, setUsername] = useState("")
-    
+  const [username, setUsername] = useState("")
+
   return (
     <div className="flex gap-2">
       <Input
         placeholder="Enter GitHub username"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
+        className="text-black"
       />
-      <Button onClick={() => onSubmit(username)}>Search</Button>
+      <Button
+        onClick={() => onSubmit(username)}
+        className="border border-white text-white"
+      >
+        Search
+      </Button>
+
     </div>
   )
 }
