@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
+   "tsBuildInfoFile": "./.tsbuild/tsconfig.app.tsbuildinfo",
     "target": "ES2022",
     "lib": ["ES2023"],
     "module": "ESNext",
@@ -9,8 +9,8 @@
     "allowImportingTsExtensions": true,
     "isolatedModules": true,
     "moduleDetection": "force",
-    "composite": true,                   // ✅ REQUIRED
-    "noEmit": false,                     // ✅ Required for `tsc -b`
+    "composite": true,                   
+    // "noEmit": true,                    
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
